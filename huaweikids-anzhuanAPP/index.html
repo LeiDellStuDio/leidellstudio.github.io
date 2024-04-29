@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="LeiDell Xia">
+
+
+    <meta name="subtitle" content="LeiDell StuDio Website">
+
+
+    <meta name="description" content="LeiDell Hexo Web">
+
+
+
+<title>华为儿童手表用电脑破解安装软件方法 2024.4月可用（仅支持3Pro 或3Pro超能版） | LeiDell Studio</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.1.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">LeiDellStuDio 小站</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">帖子</a>
+                
+                    <a class="menu-item" href="/LeiDellCeshi">LeiDell 作品导航</a>
+                
+                    <a class="menu-item" href="/category">分类</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">LeiDellStuDio 小站</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">帖子</a>
+                
+                    <a class="menu-item" href="/LeiDellCeshi">LeiDell 作品导航</a>
+                
+                    <a class="menu-item" href="/category">分类</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">华为儿童手表用电脑破解安装软件方法 2024.4月可用（仅支持3Pro 或3Pro超能版）</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">LeiDell Xia</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">四月 17, 2024&nbsp;&nbsp;12:19:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%A0%B4%E8%A7%A3/">破解</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>注：本文章采用 CC-BY-NC 4.0协议</p>
+<h2 id="LeiDell-华为儿童手表用电脑破解方法-2024-4月可用（仅支持3Pro-或3pro超能版）"><a href="#LeiDell-华为儿童手表用电脑破解方法-2024-4月可用（仅支持3Pro-或3pro超能版）" class="headerlink" title="LeiDell 华为儿童手表用电脑破解方法 2024.4月可用（仅支持3Pro 或3pro超能版）"></a>LeiDell 华为儿童手表用电脑破解方法 2024.4月可用（仅支持3Pro 或3pro超能版）</h2><hr>
+<p>此教程方法来自: <a target="_blank" rel="noopener" href="https://space.bilibili.com/442645051">作者LeiDell</a><br><a target="_blank" rel="noopener" href="https://space.bilibili.com/441737927">Null015</a><br><a target="_blank" rel="noopener" href="https://space.bilibili.com/1280679455">爱玩机的胡桃</a><br><a target="_blank" rel="noopener" href="https://space.bilibili.com/1313602139">BAIZIXI</a><br><a target="_blank" rel="noopener" href="https://space.bilibili.com/470524223">e装机</a><br>（此处没列完 排名不分先后）</p>
+<h5 id="已取得上述所有Up主的同意"><a href="#已取得上述所有Up主的同意" class="headerlink" title="已取得上述所有Up主的同意"></a>已取得上述所有Up主的同意</h5><hr>
+<p>免责申明：任何 <em><strong>刷机、破解</strong></em> 都伴随着风险，请君斟酌。出现任何问题与网站本人，与上方名单内UP主无关。我们不负任何责任。阅读本文章代表您接受本条款。（本教程示例手表为3Pro超能版）</p>
+<hr>
+<p>视频教程 ：<br>@爱玩机的胡桃</p>
+<iframe src="//player.bilibili.com/player.html?aid=434007393&amp;bvid=BV1FG411N7rv&amp;cid=931571544&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>@Null015</p>
+<iframe src="//player.bilibili.com/player.html?aid=785537755&amp;bvid=BV1V14y1o7mM&amp;cid=1186235235&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>@BAIZIXI</p>
+<iframe src="//player.bilibili.com/player.html?aid=748066042&amp;bvid=BV1zC4y1J79u&amp;cid=1322133136&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>@e装机 （底下两个都是）</p>
+<iframe src="//player.bilibili.com/player.html?aid=385086097&amp;bvid=BV1dZ4y1q7RS&amp;cid=749894158&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>@e装机 最新</p>
+<iframe src="//player.bilibili.com/player.html?aid=1252543565&amp;bvid=BV1fJ4m1V7Vr&amp;cid=1494349725&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+
+<hr>
+<h3 id="文字图片教程"><a href="#文字图片教程" class="headerlink" title="文字图片教程"></a>文字图片教程</h3><ul>
+<li><p>1.准备物品 ：华为儿童手表3Pro或3Pro超能版、一根数据线 （MicroUSB线，华为儿童手表原装线便是，没有去网上买)，一台电脑（Windows7及以上）</p>
+</li>
+<li><p>2.软件准备：<a target="_blank" rel="noopener" href="https://vincent8623.lanzouw.com/s/AndroidWatch-ADBToolBox">安卓手表ADB实用工具箱</a> （下载第一个exe文件） 作者：明风の岚<br><img src="/image/huaweisb1/%E5%AE%89%E5%8D%93adbgjxxzlanzou.png" alt="下载截图"></p>
+</li>
+<li><p>3.打开下载的<em>安卓手表ADB实用工具箱 50.0.0.exe</em>( 50.0.0是版本号，版本不同，最新即可，上方图片上是51.0.0，我的是老版本安装包）<br><img src="/image/huaweisb1/%E5%AE%89%E5%8D%93adbgjTB.png" alt="打开文件"></p>
+</li>
+<li><p>4.安装<br><img src="/image/huaweisb1/DJXYB.png" alt="安装主页面"></p>
+</li>
+</ul>
+<p><img src="/image/huaweisb1/jstk.png" alt="同意条款"></p>
+<p><img src="/image/huaweisb1/xzlj.png" alt="选择路径"></p>
+<p><img src="/image/huaweisb1/wyzx.png" alt="阅读申明"></p>
+<h3 id="之后："><a href="#之后：" class="headerlink" title="之后："></a>之后：</h3><p><img src="/image/huaweisb1/azgc.gif" alt="安装过程"></p>
+<p>勾选 <code>安装ADB驱动</code></p>
+<h5 id="等一会儿后便进入-安卓手表ADB实用工具箱-的主界面-不要动"><a href="#等一会儿后便进入-安卓手表ADB实用工具箱-的主界面-不要动" class="headerlink" title="等一会儿后便进入 安卓手表ADB实用工具箱 的主界面 不要动"></a>等一会儿后便进入 <code>安卓手表ADB实用工具箱</code> 的主界面 不要动</h5><p><img src="/image/huaweisb1/zjm.png" alt="主界面"></p>
+<hr>
+<h1 id="手表操作"><a href="#手表操作" class="headerlink" title="手表操作"></a>手表操作</h1><h6 id="·-打开手表"><a href="#·-打开手表" class="headerlink" title="· 打开手表"></a>· 打开手表</h6><p><img src="/image/huaweisb1/dksb1.png" alt="打开手表"></p>
+<h6 id="·-向右划"><a href="#·-向右划" class="headerlink" title="· 向右划"></a>· 向右划</h6><p><img src="/image/huaweisb1/xyhdgd2.png" alt="向右划"></p>
+<h6 id="·-划到设置这里"><a href="#·-划到设置这里" class="headerlink" title="· 划到设置这里"></a>· 划到设置这里</h6><p><img src="/image/huaweisb1/szzl3.png" alt="划到设置"></p>
+<h6 id="·-打开设置"><a href="#·-打开设置" class="headerlink" title="· 打开设置"></a>· 打开设置</h6><p><img src="/image/huaweisb1/dksz4.png" alt="打开设置"></p>
+<h6 id="·-划到设备信息这栏"><a href="#·-划到设备信息这栏" class="headerlink" title="· 划到设备信息这栏"></a>· 划到设备信息这栏</h6><p><img src="/image/huaweisb1/hdsbxx5.png" alt="划到设备信息"></p>
+<h6 id="·-打开设备信息"><a href="#·-打开设备信息" class="headerlink" title="· 打开设备信息"></a>· 打开设备信息</h6><p><img src="/image/huaweisb1/dksbxx6.png" alt="打开设备信息"></p>
+<h6 id="·-点击版本号点5次，等弹出-你已处于开发者模式，无需进行此操作。"><a href="#·-点击版本号点5次，等弹出-你已处于开发者模式，无需进行此操作。" class="headerlink" title="· 点击版本号点5次，等弹出 你已处于开发者模式，无需进行此操作。"></a>· 点击版本号点5次，等弹出 <code>你已处于开发者模式，无需进行此操作。</code></h6><p><img src="/image/huaweisb1/bbh7.png" alt="点击版本号"></p>
+<h6 id="·-退出设备信息"><a href="#·-退出设备信息" class="headerlink" title="·  退出设备信息"></a>·  退出设备信息</h6><p><img src="/image/huaweisb1/kfzms8.gif" alt="打开开发者"><br>进入开发者模式选项，打开 <code>USB调试</code><br><img src="/image/huaweisb1/dkusb.png" alt="打开USB调试"></p>
+<h2 id="然后"><a href="#然后" class="headerlink" title="然后:"></a>然后:</h2><h4 id="先将数据线公头插入电脑的USB口，母口-像给手表充电一样插进手表充电口里"><a href="#先将数据线公头插入电脑的USB口，母口-像给手表充电一样插进手表充电口里" class="headerlink" title="先将数据线公头插入电脑的USB口，母口 像给手表充电一样插进手表充电口里"></a>先将数据线公头插入电脑的USB口，母口 像给手表充电一样插进手表充电口里</h4><h2 id="这时-电脑发出提示音，手表上显示"><a href="#这时-电脑发出提示音，手表上显示" class="headerlink" title="这时 电脑发出提示音，手表上显示:"></a>这时 电脑发出提示音，手表上显示:</h2><p><img src="/image/huaweisb1/usbms.png" alt="USB模式"></p>
+<h5 id="选择-PTP模式"><a href="#选择-PTP模式" class="headerlink" title="选择 PTP模式"></a>选择 <code>PTP模式</code></h5><h3 id="之后：有一个白色弹窗-大概如下（每台电脑不同）"><a href="#之后：有一个白色弹窗-大概如下（每台电脑不同）" class="headerlink" title="之后：有一个白色弹窗 大概如下（每台电脑不同）"></a>之后：有一个白色弹窗 大概如下（每台电脑不同）</h3><p><img src="/image/huaweisb1/YXUSB.png" alt="允许usb"></p>
+<hr>
+<h1 id="电脑这边"><a href="#电脑这边" class="headerlink" title="电脑这边"></a>电脑这边</h1><p><img src="/image/huaweisb1/zjm2.png" alt="主界面2"></p>
+<h2 id="手表可用软件下载"><a href="#手表可用软件下载" class="headerlink" title="手表可用软件下载"></a>手表可用软件下载</h2><p><a target="_blank" rel="noopener" href="https://aivanjidefutao.lanzoul.com/b047n3hgb">游戏</a><br><a target="_blank" rel="noopener" href="https://aivanjidefutao.lanzoul.com/b047n3kxg">工具</a><br><a target="_blank" rel="noopener" href="https://aivanjidefutao.lanzoul.com/b047n3owj">音讯</a><br>密码全是：<code>vanji</code> &nbsp;<br>文件来自 <a target="_blank" rel="noopener" href="https://space.bilibili.com/442645051">@爱玩机的胡桃</a><br>想要更多文件 加QQ群:<code>462353648</code> <a target="_blank" rel="noopener" href="https://space.bilibili.com/2011415996">@s诺米s</a> 的手表交流群<br><a target="_blank" rel="noopener" href="https://space.bilibili.com/470524223">@e装机</a> 的 <a target="_blank" rel="noopener" href="https://chiyang001.github.io/APP">华为儿童手表应用下载站</a><img src="/image/huaweisb1/ezjsc.png" alt="奕奕应用市场图片"> 奕奕的手表交流QQ群:<code>797541418</code></p>
+<p>注：可以打开 其他功能 / 屏幕工具 / 调成 <code>640</code> x <code>640</code><br><img src="/image/huaweisb1/fbl640.png" alt="分辨率"></p>
+<p><img src="/image/huaweisb1/xuanfou.png" alt="选否"></p>
+<p><img src="/image/huaweisb1/tscg.png" alt="提示"></p>
+<hr>
+<h1 id="·-开始安装软件"><a href="#·-开始安装软件" class="headerlink" title="·  开始安装软件"></a>·  开始安装软件</h1><ul>
+<li><ol>
+<li></li>
+</ol>
+</li>
+</ul>
+<h5 id="点击安装应用-安装自定义Apk-文件选取"><a href="#点击安装应用-安装自定义Apk-文件选取" class="headerlink" title="点击安装应用  / 安装自定义Apk / 文件选取"></a>点击安装应用  / 安装自定义Apk / 文件选取</h5><p><img src="/image/huaweisb1/xzapk.png" alt="主界面2"></p>
+<h4 id="选择刚刚下载的Apk"><a href="#选择刚刚下载的Apk" class="headerlink" title="选择刚刚下载的Apk"></a>选择刚刚下载的Apk</h4><p>（我这里下载的是Minecraft)(文件不够去上述QQ群获取）<br>安装APK<br><img src="/image/huaweisb1/xzz.gif" alt="安装apk"><br>列表中<br><img src="/image/huaweisb1/mcpe1.png" alt="列表"></p>
+<p><img src="/image/huaweisb1/mcpe2.png" alt="主界面mc"></p>
+<p><img src="/image/huaweisb1/mcpe3.png" alt="游戏中"></p>
+<hr>
+<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>好了，这就是教程的所有内容了，记得分享出去哦！<br>（本教程示例手表为3Pro超能版）<br>（软件除了几个安装不了，其他全安装的了）</p>
+<hr>
+<h3 id="注：因考虑大多都是3Pro-我在此推荐Mxzsan2030-和-BAIZIXI的解决第三方软件无法显示系统桌面问题！-链接：【桌面直显】应用启动器-apk-密码：b4f7-通过上述方法直接安装即可"><a href="#注：因考虑大多都是3Pro-我在此推荐Mxzsan2030-和-BAIZIXI的解决第三方软件无法显示系统桌面问题！-链接：【桌面直显】应用启动器-apk-密码：b4f7-通过上述方法直接安装即可" class="headerlink" title="注：因考虑大多都是3Pro.我在此推荐Mxzsan2030 和 BAIZIXI的解决第三方软件无法显示系统桌面问题！,链接：【桌面直显】应用启动器.apk 密码：b4f7    通过上述方法直接安装即可"></a>注：因考虑大多都是3Pro.我在此推荐<a target="_blank" rel="noopener" href="https://space.bilibili.com/2076292953">Mxzsan2030</a> 和 <a target="_blank" rel="noopener" href="https://space.bilibili.com/1313602139">BAIZIXI</a>的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1KC411Y7t8">解决第三方软件无法显示系统桌面问题！</a>,链接：<a target="_blank" rel="noopener" href="https://wwp.lanzoup.com/i3BR01qx6e3e">【桌面直显】应用启动器.apk</a> 密码：<code>b4f7</code>    通过上述方法直接安装即可</h3><p>软件作者：<a target="_blank" rel="noopener" href="https://space.bilibili.com/241285619">yushuCreating</a></p>
+<h1 id="By-LeiDell"><a href="#By-LeiDell" class="headerlink" title="By:LeiDell"></a>By:<a target="_blank" rel="noopener" href="https://space.bilibili.com/442645051">LeiDell</a></h1><p>此教程采用 CC-BY-NC 4.0协议</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>LeiDell Xia</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://leidellstudio.github.io/huaweikids-anzhuanAPP/">https://leidellstudio.github.io/huaweikids-anzhuanAPP/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2024  LeiDell <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>探索科技的<strong>奥秘</strong>.</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%95%99%E7%A8%8B/"># 教程</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+        </section>
+
+
+    </article>
+</div>
+
+
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'b1e2a59131801f2b44a4',
+        clientSecret: '6e7c7c87bf0287a2d095bf57284d8a9759af04a8',
+        repo: 'comments',
+        owner: 'LeiDellStuDio',
+        admin: 'LeiDellStudio',
+        id: md5(location.pathname),      
+        labels: 'Gitalk'.split(',').filter(l => l),
+        perPage: 50,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: true
+      })
+      gitalk.render('gitalk-container')
+</script>
+
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© LeiDell Xia | Powered by<a href="https://space.bilibili.com/442645051" target="_blank"> LeiDell</a> & <a href="https://github.com/LeiDellStuDio" target="_blank"> LeiDell Github</a></span>
+<span>
+2018 - 2024
+</span>
+<img src="/image/ico64.png">
+<a href="https://icp.gov.moe/?keyword=20240307" target="_blank">萌ICP备20240307号</a>
+<span>
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<span class="site-uv">
+    总访客量:
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>&nbsp;
+
+
+<span class="site-pv">
+    总访问量:
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+
+</span>
+</footer>
+
+
+    </div>
+</body>
+
+</html>
