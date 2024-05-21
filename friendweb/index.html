@@ -138,46 +138,52 @@
     }
 </script>
             <div class="main">
-                
-    <!-- 先要引用这个icon库 -->
-<link rel="stylesheet" href="../fonts/iconfont2/iconfont.css"> 
-<!-- 再进行代码编写 -->
-<div class="container profile-container">
-    <div class="intro">
-        <div class="avatar">
-            <a href="/"><img src="https://img2.imgtp.com/2024/05/21/C0Gby9T2.png"></a>
-        </div>
-        <div class="nickname">LeiDell StuDio</div>
-        <div class="description"><p>一起 <strong>無限進步</strong> <br>Grow infinitely together.</p>
+                <div class="container">
+    <article class="post-wrap page">
+        
+        <h2 class="post-title"></h2>
+        
+        <section class="post-content">
+            <h1 id="友链"><a href="#友链" class="headerlink" title="友链"></a>友链</h1><hr>
+<p>欢迎互换友链 (゜-゜)つロ </p>
+<p>友接顺序随机排序哦</p>
+<hr>
+<h3 id="薄荷の小屋"><a href="#薄荷の小屋" class="headerlink" title="薄荷の小屋"></a>薄荷の小屋</h3><p><img src="https://img2.imgtp.com/2024/05/21/TRYx7esK.png" alt="薄荷の小屋"></p>
+<p><a target="_blank" rel="noopener" href="https://www.hoshiroko.com/">薄荷の小屋</a></p>
+<h3 id="越是拼命往前伸手，渴望之物越是渐行渐远"><a href="#越是拼命往前伸手，渴望之物越是渐行渐远" class="headerlink" title="越是拼命往前伸手，渴望之物越是渐行渐远"></a>越是拼命往前伸手，渴望之物越是渐行渐远</h3><hr>
+<p>本站信息：</p>
+<p>名称：LeiDell的博客</p>
+<p>简介：一起 无限进步</p>
+<p>地址：<a href="https://leidell.xy977.com/">https://LeiDell.Xy977.com</a></p>
+<p>图标：<a target="_blank" rel="noopener" href="https://img2.imgtp.com/2024/05/21/C0Gby9T2.png">https://img2.imgtp.com/2024/05/21/C0Gby9T2.png</a></p>
+<p>站长邮箱：<a href="mailto:3309499070@QQ.com">3309499070@QQ.com</a></p>
+<p>添加完信息给我发邮件就好了哦~<br>我会在14天内添加，如果迟迟没添加，发邮件催我就好了！</p>
+
+        </section>
+    </article>
 </div>
-        <div class="links">
-            
-                
-                    <a class="link-item" title="Blog" href="/archives">
-                        
-                        
-                            <i class="iconfont icon-blog"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="Github" target="_blank" rel="noopener" href="https://github.com/LeiDellStudio">
-                        
-                        
-                            <i class="iconfont icon-github"></i>
-                        
-                    </a>
-                
-                    <a class="link-item" title="bilibili-line" target="_blank" rel="noopener" href="https://space.bilibili.com/442645051">
-                        
-                        
-                            <i class="iconfont icon-bilibili-line"></i>
-                        
-                    </a>
-                
-            
-        </div>
-    </div>
-</div>
+
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'b1e2a59131801f2b44a4',
+        clientSecret: '6e7c7c87bf0287a2d095bf57284d8a9759af04a8',
+        repo: 'comments',
+        owner: 'LeiDellStuDio',
+        admin: 'LeiDellStuDio',
+        id: md5(location.pathname),      
+        labels: 'Gitalk'.split(',').filter(l => l),
+        perPage: 50,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: true
+      })
+      gitalk.render('gitalk-container')
+</script>
 
 
             </div>
