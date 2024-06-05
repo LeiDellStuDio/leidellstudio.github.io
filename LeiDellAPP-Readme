@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="LeiDell">
+
+
+    <meta name="subtitle" content="LeiDell 的小站">
+
+
+    <meta name="description" content="LeiDell 的小站">
+
+
+
+<title>LeiDell手表应用市场更新日志 | LeiDell Blog！</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.1.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">LeiDellStuDio 小站</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">帖子</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://leidellapp.xy977.com/">LeiDell手表市场</a>
+                
+                    <a class="menu-item" href="/category">分类</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+                    <a class="menu-item" href="/friendweb">友链</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">LeiDellStuDio 小站</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">帖子</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://leidellapp.xy977.com/">LeiDell手表市场</a>
+                
+                    <a class="menu-item" href="/category">分类</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+                    <a class="menu-item" href="/friendweb">友链</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">LeiDell手表应用市场更新日志</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">LeiDell</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">五月 15, 2024&nbsp;&nbsp;11:45:14</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA/">应用市场</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="LeiDell手表应用市场更新日志"><a href="#LeiDell手表应用市场更新日志" class="headerlink" title="LeiDell手表应用市场更新日志"></a>LeiDell手表应用市场更新日志</h1><hr>
+<p>基于 @chiyang001 @是大大帅aaa @e装机 代码上改编<br>原 <a target="_blank" rel="noopener" href="https://chiyang001.github.io/APP/" title="原版网址">华为手表应用市场</a>  </p>
+<h5 id="经过-e装机-授权"><a href="#经过-e装机-授权" class="headerlink" title="经过 @e装机 授权"></a>经过 @e装机 授权</h5><hr>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>版本 0.0.1:</p>
+<p>2024年5月16日 </p>
+<p>建站，并使用域名 <a target="_blank" rel="noopener" href="https://leidellapp.xy977.com/">LeiDellAPP.xy977.com</a> , 申请到萌备案号：<a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20241154">萌ICP备20241154号</a>，暂未提供应用下载服务，要等网站基础设施弄好 再提供下载服务。</p>
+<p>版本 0.0.2：</p>
+<p>2024年5月18日</p>
+<p>拥有 <a href="https://icp.kldhsh.top/?id=202438" target="_blank">开朗ICP备案 202438号</a>              <a href="https://icp.k9b.cn/?id=20240308" target="_blank">喵喵ICP备案 20240308号</a>  ，更新第一个应用[地铁跑酷]，TM的今天骑自行车摔了一跤，气死人，腰杆疼[哭]</p>
+<p>版本 0.0.3：</p>
+<p>2024年5月22日</p>
+<p>更新1个应用[钢琴块].</p>
+<p>版本 0.0.4 </p>
+<p>2024年5月29日</p>
+<p>更新2个应用[Phira]电脑版，感谢DragonPG提出建议。<br>第二个应用是[抖音（不可搜索登录) ]，<br>马上6.1了，祝大家儿童节快乐</p>
+<p>版本 0.0.5</p>
+<p>2024年6月4日</p>
+<p>今中午主力机  (FireBat Mini N100）被我拆坏，暂时更新不了<a href="https://leidell.xy977.com/">LeiDell Blog</a>，但是备用机（Microsoft Surface 3）还能用，所以暂且更新<a target="_blank" rel="noopener" href="https://leidellapp.xy977.com/">LeiDell应用下载站</a><br>等后期买来 M2.硬盘盒才可以更新，还有6月2日那一天晚，好友 薄荷の尾巴(   <a target="_blank" rel="noopener" href="https://hoshiroko.com/">薄荷の小屋</a> 站长）提醒我图床ImgTp崩了，所有图片全部失效(包括我头像)，所以抢先恢复图片，不更新应用。</p>
+<p>2024年6月5日<br>主力机（FireBat Mini N100）今意外修好，所以赶紧改图床。<br>更新[计算器]1个应用<br>删去<a href="https://icp.k9b.cn/?id=20240308" target="_blank">喵喵ICP备案 20240308号</a></p>
+<h1 id="回到-LeiDell应用下载站"><a href="#回到-LeiDell应用下载站" class="headerlink" title="回到 LeiDell应用下载站"></a>回到 <a target="_blank" rel="noopener" href="https://leidellapp.xy977.com/">LeiDell应用下载站</a></h1>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>LeiDell</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://leidell.xy977.com/LeiDellAPP-Readme">https://leidell.xy977.com/LeiDellAPP-Readme</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright © 2024  LeiDell <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>探索科技的<strong>奥秘</strong>.</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E6%97%A5%E5%BF%97/"># 日志</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/huaweikids1-installAPP/">华为儿童手表用电脑破解安装软件方法 2024.4月可用（仅支持3Pro 或3Pro超能版）</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'b1e2a59131801f2b44a4',
+        clientSecret: '6e7c7c87bf0287a2d095bf57284d8a9759af04a8',
+        repo: 'comments',
+        owner: 'LeiDellStudio',
+        admin: 'LeiDellStudio',
+        id: md5(location.pathname),      
+        labels: 'Gitalk'.split(',').filter(l => l),
+        perPage: 20,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: true
+      })
+      gitalk.render('gitalk-container')
+</script>
+
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© LeiDell | Powered by<a href="https://space.bilibili.com/442645051" target="_blank"> LeiDell</a> & <a href="https://github.com/LeiDellStuDio" target="_blank"> LeiDell Github </a></span>
+<span>
+2018 - 2024
+</span>
+<img src="/image/ico64.png">
+<a href="https://icp.gov.moe/?keyword=20240307" target="_blank">萌ICP备20240307号</a>
+<span>
+<img style="width:20px;height:20px;margin-bottom:-4px" src="https://img2.imgtp.com/2024/05/13/hG8KCYmh.jpg"> <a href="https://icp.kldhsh.top/?id=114514" target="_blank">开朗ICP备案 114514号</a></span>
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<span class="site-uv">
+    总访客量:
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>&nbsp;
+
+
+<span class="site-pv">
+    总访问量:
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+
+</span>
+</footer>
+
+
+    </div>
+</body>
+
+</html>
