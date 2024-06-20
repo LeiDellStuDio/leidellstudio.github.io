@@ -17,7 +17,7 @@
 
 
 
-<title>归档 | LeiDell Blog！</title>
+<title>空调小游戏（测试） | LeiDell Blog！</title>
 
 
 
@@ -138,40 +138,180 @@
     }
 </script>
             <div class="main">
-                <div class="post-wrap archive">
+                <div class="container">
     
     
-        
-
-        
-            <h3>2024</h3>
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/06/20/index/">空调小游戏（测试）</a>
-            <span class="archive-item-date">六月 20, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/LeiDellAPP-Readme/">LeiDell手表应用市场更新日志</a>
-            <span class="archive-item-date">五月 15, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/huaweikids1-installAPP/">华为儿童手表用电脑破解安装软件方法 2024.4月可用（仅支持3Pro 或3Pro超能版）</a>
-            <span class="archive-item-date">四月 17, 2024</span>
-        </article>
-    
-    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
 </div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">空调小游戏（测试）</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">LeiDell</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">六月 20, 2024&nbsp;&nbsp;13:20:30</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <hr>
+<h2 id="title-空调小游戏（测试）"><a href="#title-空调小游戏（测试）" class="headerlink" title="title: 空调小游戏（测试）"></a>title: 空调小游戏（测试）</h2><h1 align="center">来吹空调吧</h1>
+
+<iframe style="width:100%;" height="800" frameborder="no" src="https://ac.yunyoujun.cn"></iframe>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>LeiDell</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://leidell.xy977.com/2024/06/20/index/">https://leidell.xy977.com/2024/06/20/index/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright © 2024  LeiDell <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>探索科技的<strong>奥秘</strong>.</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/LeiDellAPP-Readme/">LeiDell手表应用市场更新日志</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: 'b1e2a59131801f2b44a4',
+        clientSecret: '6e7c7c87bf0287a2d095bf57284d8a9759af04a8',
+        repo: 'comments',
+        owner: 'LeiDellStudio',
+        admin: 'LeiDellStudio',
+        id: md5(location.pathname),      
+        labels: 'Gitalk'.split(',').filter(l => l),
+        perPage: 20,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: true
+      })
+      gitalk.render('gitalk-container')
+</script>
+
+
             </div>
             <footer id="footer" class="footer">
     <div class="copyright">
