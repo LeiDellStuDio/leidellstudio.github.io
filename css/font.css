@@ -1,7 +1,30 @@
 @font-face {
-  font-family: 'lanting';
-  src: url("../fonts/lanting/lanting.eot"); /* IE9 */
-  src: url("../fonts/lanting/lanting.eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */ url("../fonts/lanting/lanting.woff2") format('woff2'), url("../fonts/lanting/lanting.woff") format('woff'), url("../fonts/lanting/lanting.ttf") format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  font-weight: 300;
-  font-display: swap;
+  font-family: "iconfont"; /* Project id 4595923 */
+  src: url('//at.alicdn.com/t/c/font_4595923_9jri6ypci4s.woff2?t=1719142783216') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4595923_9jri6ypci4s.woff?t=1719142783216') format('woff'),
+       url('//at.alicdn.com/t/c/font_4595923_9jri6ypci4s.ttf?t=1719142783216') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-douyin:before {
+  content: "\e646";
+}
+
+.icon-wangyiyunyinle-copy:before {
+  content: "\e600";
+}
+
+.icon-gitee:before {
+  content: "\e60c";
+}
+
+.icon-bilibili-line:before {
+  content: "\e66d";
 }
