@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4595923 */
-  src: url('//at.alicdn.com/t/c/font_4595923_9jri6ypci4s.woff2?t=1719142783216') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4595923_9jri6ypci4s.woff?t=1719142783216') format('woff'),
-       url('//at.alicdn.com/t/c/font_4595923_9jri6ypci4s.ttf?t=1719142783216') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_4595923_37jeq90bfsa.woff2?t=1719206138575') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4595923_37jeq90bfsa.woff?t=1719206138575') format('woff'),
+       url('//at.alicdn.com/t/c/font_4595923_37jeq90bfsa.ttf?t=1719206138575') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-email-line:before {
+  content: "\e6d6";
 }
 
 .icon-douyin:before {
